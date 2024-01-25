@@ -1,0 +1,262 @@
+﻿<Window x:Class="Intercom.Windows.OutdoorWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Intercom.Windows"
+        xmlns:fa="http://schemas.awesome.incremented/wpf/xaml/fontawesome.sharp"
+        FontFamily="Jetbrains Mono"
+        mc:Ignorable="d"
+        Title="OutdoorWindow"  
+        ResizeMode="NoResize"
+        Background="Transparent"
+        AllowsTransparency="True"
+        WindowStyle="None"
+        Height="380"
+        MouseMove="Window_MouseMove"
+        >
+    <Window.Resources>
+        <ResourceDictionary>
+            <Style x:Key="KeyboardBtn" TargetType="Button">
+                <Setter Property="Margin" Value="5"/>
+                <Setter Property="FontFamily" Value="Jetbrains Mono"/>
+                <Setter Property="FontSize" Value="25"/>
+                <Setter Property="VerticalContentAlignment" Value="Center"/>
+                <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                <Setter Property="Height" Value="50"/>
+                <Setter Property="Width" Value="50"/>
+            </Style>
+        </ResourceDictionary>
+    </Window.Resources>
+
+    <WrapPanel Background="Transparent" VerticalAlignment="Center" HorizontalAlignment="Center">
+        <Border BorderBrush="DarkGray"
+                BorderThickness="1"
+                CornerRadius="5"
+                Background="LightGray">
+
+            <Grid VerticalAlignment="Top" Margin="3">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="auto"/>
+                </Grid.ColumnDefinitions>
+
+                <Border Grid.ColumnSpan="2" 
+                    Grid.Row="0"
+                    Margin="10"     
+                    BorderBrush="DarkGray"
+                    BorderThickness="1"
+                    CornerRadius="5"
+                    Padding="5">
+
+                    <Grid VerticalAlignment="Center">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="32"/>
+                            <ColumnDefinition Width="32"/>
+                        </Grid.ColumnDefinitions>
+
+
+                        <Button Width="22" Height="22"
+                            Padding="2"
+                            Grid.Column="1"
+                            Background="LightGray"
+                            Foreground="DarkGray"  
+                            Click="SettingsButton_Click"
+                            BorderBrush="Transparent">
+                            <Button.Content>
+                                <fa:IconImage Icon="Gear" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="DarkGray"/>
+                            </Button.Content>
+                        </Button>
+
+                        <Button Width="22" Height="22"
+                            Padding="3"
+                            Margin="3,0,3,0"
+                            Grid.Column="2"
+                            Click="CloseAppButton_Click"
+                            Background="LightGray"
+                            Foreground="DarkGray"      
+                            BorderBrush="Transparent"
+                            HorizontalAlignment="Right"
+                            HorizontalContentAlignment="Center"
+                            VerticalContentAlignment="Center"
+                            >
+                            <Button.Content>
+                                <fa:IconImage Icon="X" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="DarkGray"/>
+                            </Button.Content>
+                        </Button>
+                    </Grid>
+                </Border>
+
+                <Border Grid.Column="0" 
+                    Grid.Row="1"
+                    Margin="10"     
+                    BorderBrush="DarkGray"
+                    BorderThickness="1"
+                    CornerRadius="5"
+                    Padding="5,15,5,5">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+                        <TextBox 
+                            x:Name="CodeInputTxt" 
+                            Grid.Row="0" Grid.ColumnSpan="3"
+                            Margin="10,0,10,0" 
+                            FontSize="26" 
+                            FontFamily="Jetbrains Mono"
+                            TextAlignment="Center"
+                            VerticalAlignment="Center"
+                            IsReadOnly="True" />
+                        <Button Style="{StaticResource KeyboardBtn}" Grid.Row="1" Grid.Column="0" Content="1" Click="NumberButton_Click">
+                            <Button.Resources>
+                                <Style TargetType="Border">
+                                    <Setter Property="CornerRadius" Value="5"/>
+                                </Style>
+                            </Button.Resources>
+                        </Button>
+                        <Button Style="{StaticResource KeyboardBtn}" Grid.Row="1" Grid.Column="1" Content="2" Click="NumberButton_Click">
+                            <Button.Resources>
+                                <Style TargetType="Border">
+                                    <Setter Property="CornerRadius" Value="5"/>
+                                </Style>
+                            </Button.Resources>
+                        </Button>
+                        <Button Style="{StaticResource KeyboardBtn}" Grid.Row="1" Grid.Column="2" Content="3" Click="NumberButton_Click">
+                            <Button.Resources>
+                                <Style TargetType="Border">
+                                    <Setter Property="CornerRadius" Value="5"/>
+                                </Style>
+                            </Button.Resources>
+                        </Button>
+                        <Button Style="{StaticResource KeyboardBtn}" Grid.Row="2" Grid.Column="0" Content="4" Click="NumberButton_Click">
+                            <Button.Resources>
+                                <Style TargetType="Border">
+                                    <Setter Property="CornerRadius" Value="5"/>
+                                </Style>
+                            </Button.Resources>
+                        </Button>
+                        <Button Style="{StaticResource KeyboardBtn}" Grid.Row="2" Grid.Column="1" Content="5" Click="NumberButton_Click">
+                            <Button.Resources>
+                                <Style TargetType="Border">
+                                    <Setter Property="CornerRadius" Value="5"/>
+                                </Style>
+                            </Button.Resources>
+                        </Button>
+                        <Button Style="{StaticResource KeyboardBtn}" Grid.Row="2" Grid.Column="2" Content="6" Click="NumberButton_Click">
+                            <Button.Resources>
+                                <Style TargetType="Border">
+                                    <Setter Property="CornerRadius" Value="5"/>
+                                </Style>
+                            </Button.Resources>
+                        </Button>
+                        <Button Style="{StaticResource KeyboardBtn}" Grid.Row="3" Grid.Column="0" Content="7" Click="NumberButton_Click">
+                            <Button.Resources>
+                                <Style TargetType="Border">
+                                    <Setter Property="CornerRadius" Value="5"/>
+                                </Style>
+                            </Button.Resources>
+                        </Button>
+                        <Button Style="{StaticResource KeyboardBtn}" Grid.Row="3" Grid.Column="1" Content="8" Click="NumberButton_Click">
+                            <Button.Resources>
+                                <Style TargetType="Border">
+                                    <Setter Property="CornerRadius" Value="5"/>
+                                </Style>
+                            </Button.Resources>
+                        </Button>
+                        <Button Style="{StaticResource KeyboardBtn}" Grid.Row="3" Grid.Column="2" Content="9" Click="NumberButton_Click">
+                            <Button.Resources>
+                                <Style TargetType="Border">
+                                    <Setter Property="CornerRadius" Value="5"/>
+                                </Style>
+                            </Button.Resources>
+                        </Button>
+                        <Button Style="{StaticResource KeyboardBtn}" Grid.Row="4" Grid.Column="0" Content="#" Click="CallButton_Click">
+                            <Button.Resources>
+                                <Style TargetType="Border">
+                                    <Setter Property="CornerRadius" Value="5"/>
+                                </Style>
+                            </Button.Resources>
+                        </Button>
+                        <Button Style="{StaticResource KeyboardBtn}" Grid.Row="4" Grid.Column="1" Content="0" Click="NumberButton_Click">
+                            <Button.Resources>
+                                <Style TargetType="Border">
+                                    <Setter Property="CornerRadius" Value="5"/>
+                                </Style>
+                            </Button.Resources>
+                        </Button>
+                        <Button Style="{StaticResource KeyboardBtn}" Grid.Row="4" Grid.Column="2" Content="C" Click="ClearButton_Click">
+                            <Button.Resources>
+                                <Style TargetType="Border">
+                                    <Setter Property="CornerRadius" Value="5"/>
+                                </Style>
+                            </Button.Resources>
+                        </Button>
+                    </Grid>
+                </Border>
+
+                <Border Grid.Column="1" Margin="10"
+                        Grid.Row="1"
+                        BorderBrush="DarkGray"
+                        BorderThickness="1"
+                        CornerRadius="5"
+                        Padding="15">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition Height="auto"/>
+                        </Grid.RowDefinitions>
+
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition Width="auto"/>
+                        </Grid.ColumnDefinitions>
+
+                        <StackPanel Grid.ColumnSpan="2" Grid.Row="0">
+                            <TextBlock FontSize="23" Text="* Введите номер квартиры"/>
+                            <TextBlock FontSize="23" Text="* Нажмите #"/>
+                            <TextBlock FontSize="23" Text="* Ждите ответа"/>
+                            <TextBlock FontSize="23" Text="* Нажмите С при ошибке"/>
+                        </StackPanel>
+
+                        <Grid Grid.Row="1" Grid.Column="0" Height="28" VerticalAlignment="Bottom">
+                            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Left">
+                                <Ellipse x:Name="Bulb" Fill="DarkGray" Width="16" Height="16"/>
+                                <Label  x:Name="StatusMessage" Content="Ожидание" FontSize="11"/>
+                            </StackPanel>
+                        </Grid>
+
+                        <Button Grid.Column="1" Grid.Row="1" Width="50" Height="50" Margin="10"
+                            Click="UseKeyButton_Click"
+                            FontSize="18"
+                            Content=""
+                            >
+                            <Button.Resources>
+                                <Style TargetType="Border">
+                                    <Setter Property="CornerRadius" Value="100"/>
+                                </Style>
+                            </Button.Resources>
+                        </Button>
+
+
+                    </Grid>
+                </Border>
+            </Grid>
+        </Border>
+    </WrapPanel>
+</Window>
